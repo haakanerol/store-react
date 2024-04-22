@@ -4,9 +4,12 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import Products from "../pages/Products";
 import NotFound from "../pages/NotFound";
+import Navbar from "../components/Navbar";
 
 const AppRouter = () => {
   return (
+    <>
+    <Navbar/>
     <div>
       {/* <BrowserRouter> */}
         <Routes>
@@ -18,6 +21,7 @@ const AppRouter = () => {
         </Routes>
       {/* </BrowserRouter> */}
     </div>
+    </>
   );
 };
 

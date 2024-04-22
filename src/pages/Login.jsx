@@ -2,8 +2,8 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthProvider";
 
 const Login = () => {
-  const [email, setEmail] = useState();
-  const [pass, setPass] = useState();
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
   const {login}=useContext(AuthContext)
 
   const handleSubmit = (e) => {
@@ -32,7 +32,7 @@ const Login = () => {
         </div>
         <form
           className="flex flex-col text-left p-3 gap-5"
-          onSubmit={() => handleSubmit()}
+          onSubmit={handleSubmit}
         >
           <div className="flex flex-col gap-2">
             <label
@@ -47,6 +47,7 @@ const Login = () => {
               className="login-input"
               id="email"
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </div>
           <div className="flex flex-col gap-2">
@@ -62,6 +63,7 @@ const Login = () => {
               className="login-input"
               id="pass"
               onChange={(e) => setPass(e.target.value)}
+              required
             />
           </div>
           <button className="bg-main h-[44px] font-montserrat text-label text-white rounded">
